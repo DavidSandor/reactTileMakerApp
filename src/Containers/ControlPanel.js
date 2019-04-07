@@ -16,10 +16,27 @@ class ControlPanel extends Component {
         )
     }
 
+    addButtonClickHandler = () => {
+        //add logic
+    }
+
     render() {
 
         const controlPanelStyle = {
-            padding: '15px'
+            padding: '15px',
+            overflow: 'auto'           
+        }
+
+        const addButtonStyle = {
+            height: '30px',
+            float: 'left',
+            margin: '5px 20px',
+            padding: '0 10px',
+            cursor: 'pointer',
+            backgroundColor: 'DimGray',
+            color: 'WhiteSmoke',
+            border: 'none',
+            borderRadius: '15px'
         }
 
         const colorBoxCollection = this.colors.map((color) =>
@@ -32,6 +49,7 @@ class ControlPanel extends Component {
           <div style={controlPanelStyle}>
               <p>Choose a color:</p>
               {colorBoxCollection}
+              <button style={addButtonStyle} onClick={this.addButtonClickHandler}>Add a new tile</button>
           </div>
         );
       }
