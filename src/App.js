@@ -5,6 +5,11 @@ import ControlPanel from './Containers/ControlPanel'
 import './App.css';
 
 class App extends Component {
+
+  addButtonClickHandler = (tileColor) => {
+    this.tileContainerRef.addTile(tileColor);
+  }
+
   render() {
 
     const headerStyle = {
@@ -16,8 +21,8 @@ class App extends Component {
     return (
       <div className='App'>
         <header style={headerStyle}>TileMakerApp</header>
-        <ControlPanel></ControlPanel>
-        <TileContainer></TileContainer>
+        <ControlPanel addButtonClickHandler={this.addButtonClickHandler}></ControlPanel>
+        <TileContainer tileContainerRef={ref => (this.tileContainerRef = ref)}></TileContainer>
       </div>     
     );
   }
