@@ -25,14 +25,18 @@ class TileContainer extends Component {
       })
     }
 
+    stretchedTileWidth(tile){
+      const tileWidth = 1 / this.state.tiles.length * 100;
+      return tileWidth + '%';
+    }
+
     render() {
 
-      const tilesToRender = this.state.tiles.map((tile) => <Tile key={tile.color} color={tile.color}></Tile>)
+      const tilesToRender = this.state.tiles.map((tile) => <Tile key={tile.color} color={tile.color} width={this.stretchedTileWidth(tile)}></Tile>)
 
       const tileContainerStyle = {
         backgroundColor: 'DimGray',
         width: '100%',
-        padding: '15px',
         overflow: 'auto'
       }
 

@@ -4,10 +4,9 @@ const tile = (input) => {
 
     const tileStyle = {
         backgroundColor: input.color,
-        width: '100px',
-        height: '100px',
-        float: 'left',
-        margin: '5px'   
+        width: input.width,
+        height: '200px',
+        float: 'left'
     }
 
     return <div style={tileStyle}></div>;
